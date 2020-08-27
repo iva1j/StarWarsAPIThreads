@@ -1,5 +1,6 @@
 import 'package:StarWarsAPIThreads/utils/strings.dart';
 import 'package:StarWarsAPIThreads/view/Characters/pages/characters.dart';
+import 'package:StarWarsAPIThreads/view/Favorites/favorites.dart';
 import 'package:StarWarsAPIThreads/view/planets/pages/planets.dart';
 import 'package:StarWarsAPIThreads/view/Ships/pages/ships.dart';
 import 'package:flutter/material.dart';
@@ -33,6 +34,7 @@ class _SWBottomNavigationBarState extends State<SWBottomNavigationBar> {
     Characters(),
     Planets(),
     Ships(),
+    Favorites(),
   ];
 
   void bottomNavBar(int index) {
@@ -45,29 +47,36 @@ class _SWBottomNavigationBarState extends State<SWBottomNavigationBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _children[_currentIndex],
-      bottomNavigationBar: 
-      BottomNavigationBar(
+      bottomNavigationBar: BottomNavigationBar(
         onTap: bottomNavBar,
         currentIndex: _currentIndex,
         items: [
           BottomNavigationBarItem(
               icon: Image.asset(
-                'assets/images/yoda.png',
+                BottomNavbarIconURLs().yoda,
                 height: 25,
               ),
               title: Text(TextStrings().charactets)),
           BottomNavigationBarItem(
               icon: Image.asset(
-                'assets/images/planet.png',
+                BottomNavbarIconURLs().planet,
                 height: 25,
               ),
               title: Text(TextStrings().planets)),
           BottomNavigationBarItem(
               icon: Image.asset(
-                'assets/images/star-wars.png',
+                BottomNavbarIconURLs().starship,
                 height: 25,
               ),
               title: Text(TextStrings().ships)),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.star,
+              size: 25,
+              color: Colors.black,
+            ),
+            title: Text(TextStrings().favorites),
+          ),
         ],
       ),
     );
