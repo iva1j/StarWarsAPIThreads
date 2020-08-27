@@ -1,6 +1,7 @@
-import 'package:StarWarsAPIThreads/characters.dart';
-import 'package:StarWarsAPIThreads/planets.dart';
-import 'package:StarWarsAPIThreads/ships.dart';
+import 'package:StarWarsAPIThreads/utils/strings.dart';
+import 'package:StarWarsAPIThreads/view/Characters/pages/characters.dart';
+import 'package:StarWarsAPIThreads/view/planets/pages/planets.dart';
+import 'package:StarWarsAPIThreads/view/Ships/pages/ships.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Star Wars',
+      title: TextStrings().starWars,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.green,
@@ -44,7 +45,8 @@ class _SWBottomNavigationBarState extends State<SWBottomNavigationBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _children[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: 
+      BottomNavigationBar(
         onTap: bottomNavBar,
         currentIndex: _currentIndex,
         items: [
@@ -53,19 +55,19 @@ class _SWBottomNavigationBarState extends State<SWBottomNavigationBar> {
                 'assets/images/yoda.png',
                 height: 25,
               ),
-              title: Text('characters')),
+              title: Text(TextStrings().charactets)),
           BottomNavigationBarItem(
               icon: Image.asset(
                 'assets/images/planet.png',
                 height: 25,
               ),
-              title: Text('planets')),
+              title: Text(TextStrings().planets)),
           BottomNavigationBarItem(
               icon: Image.asset(
                 'assets/images/star-wars.png',
                 height: 25,
               ),
-              title: Text('ships')),
+              title: Text(TextStrings().ships)),
         ],
       ),
     );
