@@ -1,3 +1,4 @@
+import 'package:StarWarsAPIThreads/utils/strings.dart';
 import 'package:flutter/material.dart';
 
 class Characters extends StatefulWidget {
@@ -9,10 +10,10 @@ class _CharactersState extends State<Characters> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Characters'),
+        title: Text(TextStrings().charactets),
       ),
       body: Center(
-        child: Text('List of characters'),
+        child: Text(TextStrings().charlist),
       ),
     );
   }

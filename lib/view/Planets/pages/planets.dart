@@ -1,3 +1,4 @@
+import 'package:StarWarsAPIThreads/utils/strings.dart';
 import 'package:flutter/material.dart';
 
 class Planets extends StatefulWidget {
@@ -10,10 +11,10 @@ class _PlanetsState extends State<Planets> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Planets'),
+        title: Text(TextStrings().planets),
       ),
       body: Center(
-        child: Text('List of planets'),
+        child: Text(TextStrings().planList),
       ),
     );
   }
