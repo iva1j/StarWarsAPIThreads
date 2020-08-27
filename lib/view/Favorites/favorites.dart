@@ -1,3 +1,4 @@
+import 'package:StarWarsAPIThreads/utils/strings.dart';
 import 'package:flutter/material.dart';
 
 class Favorites extends StatefulWidget {
@@ -10,10 +11,10 @@ class _FavoritesState extends State<Favorites> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Favorites'),
+        title: Text(TextStrings().favorites),
       ),
       body: Center(
-        child: Text('List of favorites'),
+        child: Text(TextStrings().favoritesList),
       ),
     );
   }

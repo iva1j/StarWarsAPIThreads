@@ -1,8 +1,8 @@
-import 'package:StarWarsAPIThreads/characters.dart';
-import 'package:StarWarsAPIThreads/favorites.dart';
-import 'package:StarWarsAPIThreads/planets.dart';
-import 'package:StarWarsAPIThreads/shared/strings.dart';
-import 'package:StarWarsAPIThreads/ships.dart';
+import 'package:StarWarsAPIThreads/utils/strings.dart';
+import 'package:StarWarsAPIThreads/view/Characters/pages/characters.dart';
+import 'package:StarWarsAPIThreads/view/Favorites/favorites.dart';
+import 'package:StarWarsAPIThreads/view/planets/pages/planets.dart';
+import 'package:StarWarsAPIThreads/view/Ships/pages/ships.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Star Wars',
+      title: TextStrings().starWars,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.green,
@@ -53,29 +53,29 @@ class _SWBottomNavigationBarState extends State<SWBottomNavigationBar> {
         items: [
           BottomNavigationBarItem(
               icon: Image.asset(
-                yoda,
+                BottomNavbarIconURLs().yoda,
                 height: 25,
               ),
-              title: Text('characters')),
+              title: Text(TextStrings().charactets)),
           BottomNavigationBarItem(
               icon: Image.asset(
-                planet,
+                BottomNavbarIconURLs().planet,
                 height: 25,
               ),
-              title: Text('planets')),
+              title: Text(TextStrings().planets)),
           BottomNavigationBarItem(
               icon: Image.asset(
-                starship,
+                BottomNavbarIconURLs().starship,
                 height: 25,
               ),
-              title: Text('ships')),
+              title: Text(TextStrings().ships)),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.star,
               size: 25,
               color: Colors.black,
             ),
-            title: Text("favorites"),
+            title: Text(TextStrings().favorites),
           ),
         ],
       ),
