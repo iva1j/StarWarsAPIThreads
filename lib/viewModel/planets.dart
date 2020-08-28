@@ -1,23 +1,27 @@
 import 'dart:convert';
 import 'dart:isolate';
 import 'package:StarWarsAPIThreads/interface/characters.dart';
+import 'package:StarWarsAPIThreads/interface/planets.dart';
 import 'package:StarWarsAPIThreads/model/people.dart';
 import 'package:StarWarsAPIThreads/utils/globalVariables.dart';
+import 'package:StarWarsAPIThreads/viewModel/characters.dart';
 import 'package:http/http.dart' as http;
 
-void initCharMethod() {
-  GetStarWarsChar().createIsolate();
-  getCharacters = GetStarWarsChar().createIsolate();
+
+void initPlanMethod() {
+  GetStarWarsPlanets().createIsolate();
+  getPlanets = GetStarWarsPlanets().createIsolate();
 }
 
-class GetStarWarsChar extends CharactersInterface {
-  Future<StarWarsModel> createIsolate() async {
+class GetStarWarsPlanets extends PlanetsInterface {
+  @override
+    Future<StarWarsModel> createIsolate() async {
     ReceivePort receivePort = ReceivePort();
     Isolate.spawn(isolateFunction, receivePort.sendPort);
     SendPort childSendPort = await receivePort.first;
     ReceivePort responsePort = ReceivePort();
     childSendPort
-        .send(["https://swapi.dev/api/people/", responsePort.sendPort]);
+        .send(["https://swapi.dev/api/planets/", responsePort.sendPort]);
     var response = await responsePort.first;
     return response;
   }
@@ -33,4 +37,6 @@ class GetStarWarsChar extends CharactersInterface {
       return replyPort.send(StarWarsModel.fromJson(jsonDecode(response.body)));
     }
   }
+
+
 }
