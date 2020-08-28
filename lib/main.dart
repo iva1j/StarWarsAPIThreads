@@ -56,26 +56,38 @@ class _SWBottomNavigationBarState extends State<SWBottomNavigationBar> {
                 BottomNavbarIconURLs().yoda,
                 height: 25,
               ),
-              title: Text(TextStrings().charactets)),
+              title: Text(
+                TextStrings().charactets,
+                style: TextStyle(color: Colors.black),
+              )),
           BottomNavigationBarItem(
               icon: Image.asset(
                 BottomNavbarIconURLs().planet,
                 height: 25,
               ),
-              title: Text(TextStrings().planets)),
+              title: Text(
+                TextStrings().planets,
+                style: TextStyle(color: Colors.black),
+              )),
           BottomNavigationBarItem(
               icon: Image.asset(
                 BottomNavbarIconURLs().starship,
                 height: 25,
               ),
-              title: Text(TextStrings().ships)),
+              title: Text(
+                TextStrings().ships,
+                style: TextStyle(color: Colors.black),
+              )),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.star,
               size: 25,
               color: Colors.black,
             ),
-            title: Text(TextStrings().favorites),
+            title: Text(
+              TextStrings().favorites,
+              style: TextStyle(color: Colors.black),
+            ),
           ),
         ],
       ),
