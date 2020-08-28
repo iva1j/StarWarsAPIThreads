@@ -1,10 +1,8 @@
 import 'dart:convert';
 import 'dart:isolate';
-import 'package:StarWarsAPIThreads/interface/characters.dart';
 import 'package:StarWarsAPIThreads/interface/planets.dart';
 import 'package:StarWarsAPIThreads/model/people.dart';
 import 'package:StarWarsAPIThreads/utils/globalVariables.dart';
-import 'package:StarWarsAPIThreads/viewModel/characters.dart';
 import 'package:http/http.dart' as http;
 
 
