@@ -1,4 +1,4 @@
-import 'package:StarWarsAPIThreads/view/Characters/pages/widgets/listOfCharacters.dart';
+import 'package:StarWarsAPIThreads/view/Characters/widgets/listOfCharacters.dart';
 import 'package:StarWarsAPIThreads/viewModel/characters.dart';
 import 'package:StarWarsAPIThreads/utils/strings.dart';
 import 'package:flutter/material.dart';

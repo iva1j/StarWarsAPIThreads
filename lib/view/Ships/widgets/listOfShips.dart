@@ -1,27 +1,24 @@
 import 'package:StarWarsAPIThreads/model/people.dart';
 import 'package:StarWarsAPIThreads/utils/globalVariables.dart';
 import 'package:StarWarsAPIThreads/utils/strings.dart';
-import 'package:StarWarsAPIThreads/view/Characters/pages/widgets/charactersDetails.dart';
+import 'package:StarWarsAPIThreads/view/Ships/widgets/shipDetails.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class ListOfCharacters extends StatefulWidget {
-  const ListOfCharacters({
-    Key key,
-  }) : super(key: key);
-
+class ListOfShips extends StatefulWidget {
   @override
-  _ListOfCharactersState createState() => _ListOfCharactersState();
+  _ListOfShipsState createState() => _ListOfShipsState();
 }
 
-class _ListOfCharactersState extends State<ListOfCharacters> {
+class _ListOfShipsState extends State<ListOfShips> {
   @override
   Widget build(BuildContext context) {
     var names;
-    return FutureBuilder<People>(
-      future: getCharacters,
+    return FutureBuilder<StarWarsModel>(
+      future: getShips,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          names = snapshot.data.charName;
+          names = snapshot.data.name;
           return ListView.builder(
               itemCount: names.length,
               itemBuilder: (BuildContext _, int index) {
@@ -31,7 +28,10 @@ class _ListOfCharactersState extends State<ListOfCharacters> {
                   leading: IconButton(icon: Icon(Icons.star), onPressed: () {}),
                   title: Text(names[index]['name'].toString()),
                   children: <Widget>[
-                    CharactersDetails(names: names, index: index),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: ShipsDetails(names: names, index: index),
+                    ),
                   ],
                 );
               });
