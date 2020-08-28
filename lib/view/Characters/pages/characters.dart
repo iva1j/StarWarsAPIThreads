@@ -1,3 +1,5 @@
+import 'package:StarWarsAPIThreads/view/Characters/pages/widgets/listOfCharacters.dart';
+import 'package:StarWarsAPIThreads/viewModel/characters.dart';
 import 'package:StarWarsAPIThreads/utils/strings.dart';
 import 'package:flutter/material.dart';
 
@@ -7,13 +9,19 @@ class Characters extends StatefulWidget {
 }
 
 class _CharactersState extends State<Characters> {
+  @override
+  void initState() {
+    initCharMethod();
+    super.initState();
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(TextStrings().charactets),
       ),
       body: Center(
-        child: Text(TextStrings().charlist),
+        child: ListOfCharacters(),
       ),
     );
   }

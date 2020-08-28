@@ -1,3 +1,6 @@
+import 'package:StarWarsAPIThreads/model/people.dart';
+import 'package:flutter/cupertino.dart';
+
 class TextStrings {
   String planets = 'Planets';
   String charactets = 'Characters';
@@ -14,4 +17,9 @@ class BottomNavbarIconURLs {
   String yoda = 'assets/images/yoda.png';
   String planet = 'assets/images/planet.png';
   String starship = 'assets/images/star-wars.png';
+}
+
+class FutureBuilderStrings {
+  String error(AsyncSnapshot<People> name) =>
+      "${name.error}neki tamo error kojeg hvala Bogu nikad neeeeeema!";
 }
