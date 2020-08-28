@@ -1,4 +1,6 @@
 import 'package:StarWarsAPIThreads/utils/strings.dart';
+import 'package:StarWarsAPIThreads/view/Planets/widgets/listofPlanets.dart';
+import 'package:StarWarsAPIThreads/viewModel/planets.dart';
 import 'package:flutter/material.dart';
 
 class Planets extends StatefulWidget {
@@ -7,6 +9,11 @@ class Planets extends StatefulWidget {
 }
 
 class _PlanetsState extends State<Planets> {
+   @override
+  void initState() {
+    initPlanMethod();
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +21,7 @@ class _PlanetsState extends State<Planets> {
         title: Text(TextStrings().planets),
       ),
       body: Center(
-        child: Text(TextStrings().planList),
+        child: ListOfPlanets(),
       ),
     );
   }

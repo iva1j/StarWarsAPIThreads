@@ -1,3 +1,5 @@
 import 'package:StarWarsAPIThreads/model/people.dart';
 
-Future<People> getCharacters;
+Future<StarWarsModel> getCharacters;
+Future<StarWarsModel> getPlanets;
+Future<StarWarsModel> getShips;
