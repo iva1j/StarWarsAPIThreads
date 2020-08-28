@@ -24,9 +24,22 @@ class _ListOfCharactersState extends State<ListOfCharacters> {
           return ListView.builder(
               itemCount: names.length,
               itemBuilder: (BuildContext _, int index) {
-                return ListTile(
+                return ExpansionTile(
                   leading: IconButton(icon: Icon(Icons.star), onPressed: () {}),
                   title: Text(names[index]['name'].toString()),
+                  children: <Widget>[
+                    Text('Height: ' + names[index]['height'].toString()),
+                    Text(
+                        'Hair color: ' + names[index]['hair_color'].toString()),
+                    Text(
+                        'Skin color: ' + names[index]['skin_color'].toString()),
+                    Text('Eye color: ' + names[index]['eye_color'].toString()),
+                    Text(
+                        'Birth year: ' + names[index]['birth_year'].toString()),
+                    Text('Gender: ' + names[index]['gender'].toString()),
+                    Text('Homeworld: ' + names[index]['homeworld'].toString()),
+                    Text('Films: ' + names[index]['films'].toString()),
+                  ],
                 );
               });
         } else if (snapshot.hasError) {
