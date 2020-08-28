@@ -1,6 +1,7 @@
 import 'package:StarWarsAPIThreads/model/people.dart';
 import 'package:StarWarsAPIThreads/utils/globalVariables.dart';
 import 'package:StarWarsAPIThreads/utils/strings.dart';
+import 'package:StarWarsAPIThreads/view/Characters/widgets/charactersDetails.dart';
 import 'package:flutter/material.dart';
 
 class ListOfCharacters extends StatefulWidget {
@@ -16,29 +17,21 @@ class _ListOfCharactersState extends State<ListOfCharacters> {
   @override
   Widget build(BuildContext context) {
     var names;
-    return FutureBuilder<People>(
+    return FutureBuilder<StarWarsModel>(
       future: getCharacters,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          names = snapshot.data.charName;
+          names = snapshot.data.name;
           return ListView.builder(
               itemCount: names.length,
               itemBuilder: (BuildContext _, int index) {
                 return ExpansionTile(
+                  trailing: Icon(Icons.arrow_drop_down_circle),
+                  backgroundColor: Colors.green[100],
                   leading: IconButton(icon: Icon(Icons.star), onPressed: () {}),
                   title: Text(names[index]['name'].toString()),
                   children: <Widget>[
-                    Text('Height: ' + names[index]['height'].toString()),
-                    Text(
-                        'Hair color: ' + names[index]['hair_color'].toString()),
-                    Text(
-                        'Skin color: ' + names[index]['skin_color'].toString()),
-                    Text('Eye color: ' + names[index]['eye_color'].toString()),
-                    Text(
-                        'Birth year: ' + names[index]['birth_year'].toString()),
-                    Text('Gender: ' + names[index]['gender'].toString()),
-                    Text('Homeworld: ' + names[index]['homeworld'].toString()),
-                    Text('Films: ' + names[index]['films'].toString()),
+                    CharactersDetails(names: names, index: index),
                   ],
                 );
               });

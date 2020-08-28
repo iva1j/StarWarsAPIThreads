@@ -20,6 +20,6 @@ class BottomNavbarIconURLs {
 }
 
 class FutureBuilderStrings {
-  String error(AsyncSnapshot<People> name) =>
+  String error(AsyncSnapshot<StarWarsModel> name) =>
       "${name.error}neki tamo error kojeg hvala Bogu nikad neeeeeema!";
 }
