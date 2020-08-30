@@ -1,15 +1,14 @@
+import 'package:StarWarsAPIThreads/model/shipModel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ShipsDetails extends StatelessWidget {
   const ShipsDetails({
     Key key,
-    @required this.names,
-    @required this.index,
+    @required this.details,
   }) : super(key: key);
 
-  final names;
-  final int index;
+  final ShipModel details;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -20,11 +19,9 @@ class ShipsDetails extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text('Model: ' + names[index]['model'].toString()),
-                Text(
-                    'Manufacturer: ' + names[index]['manufacturer'].toString()),
-                Text('Cost_in_credits: ' +
-                    names[index]['cost_in_credits'].toString()),
+                Text('Model: ' + details.model),
+                Text('Manufacturer: ' + details.manufacturer),
+                Text('Cost_in_credits: ' + details.costInCredits),
                 Divider()
               ],
             ),
@@ -32,9 +29,9 @@ class ShipsDetails extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text('Passengers: ' + names[index]['passengers'].toString()),
-                Text('Crew: ' + names[index]['crew'].toString()),
-                Text('Length: ' + names[index]['length'].toString()),
+                Text('Passengers: ' + details.passengers),
+                Text('Crew: ' + details.crew),
+                Text('Length: ' + details.length),
                 Divider()
               ],
             ),

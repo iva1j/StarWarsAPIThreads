@@ -1,9 +1,9 @@
 class StarWarsModel {
-  final List name;
-  StarWarsModel({this.name});
+  final List results;
+  StarWarsModel({this.results});
   factory StarWarsModel.fromJson(Map<String, dynamic> json) {
     return StarWarsModel(
-      name: json['results'],
+      results: json['results'],
     );
   }
 }
