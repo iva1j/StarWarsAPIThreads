@@ -1,15 +1,14 @@
+import 'package:StarWarsAPIThreads/model/planetModel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class PlanetDetails extends StatelessWidget {
   const PlanetDetails({
     Key key,
-    @required this.names,
-    @required this.index,
+    @required this.details,
   }) : super(key: key);
 
-  final names;
-  final int index;
+  final PlanetModel details;
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +20,9 @@ class PlanetDetails extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text('Population: ' + names[index]['population'].toString()),
-              Text('Terrain: ' + names[index]['terrain'].toString()),
-              Text('Gravity: ' + names[index]['gravity'].toString()),
+              Text('Population: ' + details.population),
+              Text('Terrain: ' + details.terrain),
+              Text('Gravity: ' + details.gravity),
               Divider()
             ],
           ),
@@ -31,11 +30,9 @@ class PlanetDetails extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text('Diameter: ' + names[index]['diameter'].toString()),
-              Text('Orbital_period: ' +
-                  names[index]['orbital_period'].toString()),
-              Text('Rotation_period: ' +
-                  names[index]['rotation_period'].toString()),
+              Text('Diameter: ' + details.diameter),
+              Text('Orbital_period: ' + details.orbitalPeriod),
+              Text('Rotation_period: ' + details.rotationPeriod),
               Divider()
             ],
           ),

@@ -1,7 +1,8 @@
+import 'package:StarWarsAPIThreads/model/charactersModel.dart';
 import 'package:StarWarsAPIThreads/view/Characters/widgets/listOfCharacters.dart';
 import 'package:StarWarsAPIThreads/viewModel/characters.dart';
-import 'package:StarWarsAPIThreads/utils/strings.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Characters extends StatefulWidget {
   @override
@@ -11,17 +12,26 @@ class Characters extends StatefulWidget {
 class _CharactersState extends State<Characters> {
   @override
   void initState() {
-    initCharMethod();
+    if (Provider.of<CharactersModel>(context, listen: false)
+        .isCharactersEmpty()) initCharacters(context);
+
     super.initState();
   }
 
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(TextStrings().charactets),
+        title: Text("Characters"),
       ),
-      body: Center(
-        child: ListOfCharacters(),
+      body: Container(
+        child: Center(
+          child: Consumer<CharactersModel>(
+            builder: (context, characters, child) => ListOfCharacters(
+              characters: characters.allCharacters,
+              generatingFavorites: false,
+            ),
+          ),
+        ),
       ),
     );
   }
