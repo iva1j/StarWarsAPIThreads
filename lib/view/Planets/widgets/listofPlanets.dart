@@ -1,7 +1,6 @@
 import 'package:StarWarsAPIThreads/model/people.dart';
 import 'package:StarWarsAPIThreads/utils/globalVariables.dart';
 import 'package:StarWarsAPIThreads/utils/strings.dart';
-import 'package:StarWarsAPIThreads/view/Characters/widgets/charactersDetails.dart';
 import 'package:StarWarsAPIThreads/view/Planets/widgets/planetDetails.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
