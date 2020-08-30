@@ -1,4 +1,5 @@
 import 'package:StarWarsAPIThreads/utils/strings.dart';
+import 'package:StarWarsAPIThreads/view/Characters/widgets/backgroundImage.dart';
 import 'package:flutter/material.dart';
 
 class Favorites extends StatefulWidget {
@@ -9,12 +10,16 @@ class Favorites extends StatefulWidget {
 class _FavoritesState extends State<Favorites> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(TextStrings().favorites),
-      ),
-      body: Center(
-        child: Text(TextStrings().favoritesList),
+    return Container(
+      decoration: backgroundImage(),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: AppBar(
+          title: Text(TextStrings().favorites),
+        ),
+        body: Center(
+          child: Text(TextStrings().favoritesList),
+        ),
       ),
     );
   }

@@ -1,3 +1,4 @@
+import 'package:StarWarsAPIThreads/view/Characters/widgets/backgroundImage.dart';
 import 'package:StarWarsAPIThreads/view/Characters/widgets/listOfCharacters.dart';
 import 'package:StarWarsAPIThreads/viewModel/characters.dart';
 import 'package:StarWarsAPIThreads/utils/strings.dart';
@@ -16,12 +17,16 @@ class _CharactersState extends State<Characters> {
   }
 
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(TextStrings().charactets),
-      ),
-      body: Center(
-        child: ListOfCharacters(),
+    return Container(
+      decoration: backgroundImage(),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: AppBar(
+          title: Text(TextStrings().charactets),
+        ),
+        body: Center(
+          child: ListOfCharacters(),
+        ),
       ),
     );
   }
