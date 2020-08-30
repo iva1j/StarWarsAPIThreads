@@ -1,8 +1,9 @@
-import 'package:StarWarsAPIThreads/utils/strings.dart';
+import 'package:StarWarsAPIThreads/model/shipsModel.dart';
 import 'package:StarWarsAPIThreads/view/Characters/widgets/backgroundImage.dart';
 import 'package:StarWarsAPIThreads/view/Ships/widgets/listOfShips.dart';
 import 'package:StarWarsAPIThreads/viewModel/ships.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Ships extends StatefulWidget {
   @override
@@ -12,7 +13,9 @@ class Ships extends StatefulWidget {
 class _ShipsState extends State<Ships> {
   @override
   void initState() {
-    initShipsMethod();
+    if (Provider.of<ShipsModel>(context, listen: false).isShipsEmpty())
+      initShips(context);
+
     super.initState();
   }
 
@@ -23,10 +26,15 @@ class _ShipsState extends State<Ships> {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          title: Text(TextStrings().ships),
+          title: Text("Starships"),
         ),
         body: Center(
-          child: ListOfShips(),
+          child: Consumer<ShipsModel>(
+            builder: (context, ships, child) => ListOfShips(
+              ships: ships.allShips,
+              generatingFavorites: false,
+            ),
+          ),
         ),
       ),
     );

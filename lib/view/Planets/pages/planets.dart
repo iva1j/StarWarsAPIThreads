@@ -1,8 +1,9 @@
-import 'package:StarWarsAPIThreads/utils/strings.dart';
+import 'package:StarWarsAPIThreads/model/planetsModel.dart';
 import 'package:StarWarsAPIThreads/view/Characters/widgets/backgroundImage.dart';
 import 'package:StarWarsAPIThreads/view/Planets/widgets/listofPlanets.dart';
 import 'package:StarWarsAPIThreads/viewModel/planets.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Planets extends StatefulWidget {
   @override
@@ -12,7 +13,9 @@ class Planets extends StatefulWidget {
 class _PlanetsState extends State<Planets> {
   @override
   void initState() {
-    initPlanMethod();
+    if (Provider.of<PlanetsModel>(context, listen: false).isPlanetsEmpty())
+      initPlanets(context);
+
     super.initState();
   }
 
@@ -23,10 +26,15 @@ class _PlanetsState extends State<Planets> {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          title: Text(TextStrings().planets),
+          title: Text("Planets"),
         ),
         body: Center(
-          child: ListOfPlanets(),
+          child: Consumer<PlanetsModel>(
+            builder: (context, planets, child) => ListOfPlanets(
+              planets: planets.allPlanets,
+              generatingFavorites: false,
+            ),
+          ),
         ),
       ),
     );

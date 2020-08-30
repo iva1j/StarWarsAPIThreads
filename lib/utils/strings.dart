@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 
 class TextStrings {
   String planets = 'Planets';
-  String charactets = 'Characters';
+  String characters = 'Characters';
   String ships = 'Starships';
   String charlist = 'List of characters';
   String planList = 'List of planets';
@@ -11,6 +11,12 @@ class TextStrings {
   String shipsList = 'List of ships';
   String favoritesList = "List of favorites";
   String favorites = 'Favorites';
+  String noCharFavorites = "Nema karaktera u favoritima";
+  String noPlanFavorites = "Nema planeta u favoritima";
+  String noShipFavorites = "Nema brodova u favoritima";
+  String favoriteChars = "Favorite characters";
+  String favoritePlanets = "Favorite planets";
+  String favoriteShips = "Favorite ships";
 }
 
 class BottomNavbarIconURLs {
