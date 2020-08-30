@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 class TextStrings {
   String planets = 'Planets';
   String characters = 'Characters';
-  String ships = 'Ships';
+  String ships = 'Starships';
   String charlist = 'List of characters';
   String planList = 'List of planets';
   String starWars = 'Star Wars';

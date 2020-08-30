@@ -1,4 +1,5 @@
 import 'package:StarWarsAPIThreads/model/shipsModel.dart';
+import 'package:StarWarsAPIThreads/view/Characters/widgets/backgroundImage.dart';
 import 'package:StarWarsAPIThreads/view/Ships/widgets/listOfShips.dart';
 import 'package:StarWarsAPIThreads/viewModel/ships.dart';
 import 'package:flutter/material.dart';
@@ -20,15 +21,19 @@ class _ShipsState extends State<Ships> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Starships"),
-      ),
-      body: Center(
-        child: Consumer<ShipsModel>(
-          builder: (context, ships, child) => ListOfShips(
-            ships: ships.allShips,
-            generatingFavorites: false,
+    return Container(
+      decoration: backgroundImage(),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: AppBar(
+          title: Text("Starships"),
+        ),
+        body: Center(
+          child: Consumer<ShipsModel>(
+            builder: (context, ships, child) => ListOfShips(
+              ships: ships.allShips,
+              generatingFavorites: false,
+            ),
           ),
         ),
       ),
