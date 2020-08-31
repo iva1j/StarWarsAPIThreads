@@ -1,4 +1,5 @@
 import 'package:StarWarsAPIThreads/model/shipsModel.dart';
+import 'package:StarWarsAPIThreads/utils/colors.dart';
 import 'package:StarWarsAPIThreads/view/Ships/widgets/listOfShips.dart';
 import 'package:StarWarsAPIThreads/viewModel/ships.dart';
 import 'package:flutter/material.dart';
@@ -21,8 +22,10 @@ class _ShipsState extends State<Ships> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: bgColor,
       appBar: AppBar(
         title: Text("Starships"),
+        backgroundColor: barColor,
       ),
       body: Center(
         child: Consumer<ShipsModel>(

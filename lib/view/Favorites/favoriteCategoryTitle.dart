@@ -1,3 +1,4 @@
+import 'package:StarWarsAPIThreads/utils/colors.dart';
 import 'package:StarWarsAPIThreads/utils/sizeconfig.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,7 @@ class FavoriteCategoryTitle extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
-        color: Colors.lightGreen,
+        color: favTitlesColor,
       ),
       height: SizeConfig.blockSizeVertical * 7,
       width: SizeConfig.blockSizeVertical * 100,

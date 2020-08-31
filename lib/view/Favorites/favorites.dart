@@ -1,6 +1,7 @@
 import 'package:StarWarsAPIThreads/model/charactersModel.dart';
 import 'package:StarWarsAPIThreads/model/planetsModel.dart';
 import 'package:StarWarsAPIThreads/model/shipsModel.dart';
+import 'package:StarWarsAPIThreads/utils/colors.dart';
 import 'package:StarWarsAPIThreads/utils/sizeconfig.dart';
 import 'package:StarWarsAPIThreads/utils/strings.dart';
 import 'package:StarWarsAPIThreads/view/Characters/widgets/listOfCharacters.dart';
@@ -20,8 +21,10 @@ class _FavoritesState extends State<Favorites> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
+      backgroundColor: bgColor,
       appBar: AppBar(
         title: Text(TextStrings().favorites),
+        backgroundColor: barColor,
       ),
       body: Center(
         child: Column(

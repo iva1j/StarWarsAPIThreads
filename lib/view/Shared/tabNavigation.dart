@@ -1,3 +1,4 @@
+import 'package:StarWarsAPIThreads/utils/colors.dart';
 import 'package:StarWarsAPIThreads/utils/strings.dart';
 import 'package:StarWarsAPIThreads/view/Favorites/favorites.dart';
 import 'package:StarWarsAPIThreads/view/Shared/bottomNavBarProvider.dart';
@@ -27,6 +28,7 @@ class _SWBottomNavigationBarState extends State<SWBottomNavigationBar> {
     return Scaffold(
       body: currentTab[provider.currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: barColor,
         onTap: (index) {
           provider.currentIndex = index;
         },

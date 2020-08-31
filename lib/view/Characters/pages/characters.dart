@@ -1,4 +1,6 @@
 import 'package:StarWarsAPIThreads/model/charactersModel.dart';
+import 'package:StarWarsAPIThreads/utils/colors.dart';
+import 'package:StarWarsAPIThreads/utils/strings.dart';
 import 'package:StarWarsAPIThreads/view/Characters/widgets/listOfCharacters.dart';
 import 'package:StarWarsAPIThreads/viewModel/characters.dart';
 import 'package:flutter/material.dart';
@@ -20,8 +22,10 @@ class _CharactersState extends State<Characters> {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: bgColor,
       appBar: AppBar(
         title: Text("Characters"),
+        backgroundColor: barColor,
       ),
       body: Container(
         child: Center(
