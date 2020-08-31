@@ -1,6 +1,7 @@
 import 'package:StarWarsAPIThreads/model/charactersModel.dart';
 import 'package:StarWarsAPIThreads/model/planetsModel.dart';
 import 'package:StarWarsAPIThreads/model/shipsModel.dart';
+import 'package:StarWarsAPIThreads/utils/colors.dart';
 import 'package:StarWarsAPIThreads/utils/sizeconfig.dart';
 import 'package:StarWarsAPIThreads/utils/strings.dart';
 import 'package:StarWarsAPIThreads/view/Characters/widgets/backgroundImage.dart';
@@ -20,26 +21,26 @@ class _FavoritesState extends State<Favorites> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Container(
-      decoration: backgroundImage(),
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        appBar: AppBar(
-          title: Text(TextStrings().favorites),
-        ),
-        body: Center(
-          child: Column(
-            children: [
-              SizedBox(
-                height: SizeConfig.blockSizeVertical * 0.5,
-              ),
-              FavoriteCategoryTitle(displayString: TextStrings().favoriteChars),
-              Expanded(
-                child: Consumer<CharactersModel>(
-                  builder: (context, characters, child) => ListOfCharacters(
-                    characters: characters.favoriteCharacters,
-                    generatingFavorites: true,
-                  ),
+
+    return Scaffold(
+      backgroundColor: bgColor,
+      appBar: AppBar(
+        title: Text(TextStrings().favorites),
+        backgroundColor: barColor,
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            SizedBox(
+              height: SizeConfig.blockSizeVertical * 0.5,
+            ),
+            FavoriteCategoryTitle(displayString: TextStrings().favoriteChars),
+            Expanded(
+              child: Consumer<CharactersModel>(
+                builder: (context, characters, child) => ListOfCharacters(
+                  characters: characters.favoriteCharacters,
+                  generatingFavorites: true,
+
                 ),
               ),
               FavoriteCategoryTitle(

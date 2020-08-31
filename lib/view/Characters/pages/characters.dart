@@ -1,5 +1,7 @@
 import 'package:StarWarsAPIThreads/view/Characters/widgets/backgroundImage.dart';
 import 'package:StarWarsAPIThreads/model/charactersModel.dart';
+import 'package:StarWarsAPIThreads/utils/colors.dart';
+import 'package:StarWarsAPIThreads/utils/strings.dart';
 import 'package:StarWarsAPIThreads/view/Characters/widgets/listOfCharacters.dart';
 import 'package:StarWarsAPIThreads/viewModel/characters.dart';
 import 'package:flutter/material.dart';
@@ -21,11 +23,21 @@ class _CharactersState extends State<Characters> {
 
   Widget build(BuildContext context) {
     return Container(
-      decoration: backgroundImage(),
+
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(BottomNavbarIconURLs().background),
+          fit: BoxFit.cover,
+        ),
+      ),
+
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
           title: Text("Characters"),
+
+          backgroundColor: barColor,
+
         ),
         body: Container(
           child: Center(

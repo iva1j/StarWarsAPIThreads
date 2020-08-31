@@ -1,3 +1,4 @@
+import 'package:StarWarsAPIThreads/utils/colors.dart';
 import 'package:StarWarsAPIThreads/utils/strings.dart';
 import 'package:StarWarsAPIThreads/view/Favorites/favorites.dart';
 import 'package:StarWarsAPIThreads/view/Shared/bottomNavBarProvider.dart';
@@ -27,12 +28,14 @@ class _SWBottomNavigationBarState extends State<SWBottomNavigationBar> {
     return Scaffold(
       body: currentTab[provider.currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: barColor,
         onTap: (index) {
           provider.currentIndex = index;
         },
         currentIndex: provider.currentIndex,
         items: [
           BottomNavigationBarItem(
+              backgroundColor: barColor,
               icon: Image.asset(
                 BottomNavbarIconURLs().yoda,
                 height: 25,
@@ -42,6 +45,7 @@ class _SWBottomNavigationBarState extends State<SWBottomNavigationBar> {
                 style: TextStyle(color: Colors.black),
               )),
           BottomNavigationBarItem(
+              backgroundColor: barColor,
               icon: Image.asset(
                 BottomNavbarIconURLs().planet,
                 height: 25,
@@ -51,6 +55,7 @@ class _SWBottomNavigationBarState extends State<SWBottomNavigationBar> {
                 style: TextStyle(color: Colors.black),
               )),
           BottomNavigationBarItem(
+            backgroundColor: barColor,
             icon: Image.asset(
               BottomNavbarIconURLs().starship,
               height: 25,
@@ -61,6 +66,7 @@ class _SWBottomNavigationBarState extends State<SWBottomNavigationBar> {
             ),
           ),
           BottomNavigationBarItem(
+            backgroundColor: barColor,
             icon: Icon(
               Icons.star,
               size: 25,

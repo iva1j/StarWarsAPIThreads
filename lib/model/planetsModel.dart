@@ -15,6 +15,10 @@ class PlanetsModel extends ChangeNotifier {
     return _planets.length == 0;
   }
 
+  bool isFavoritePlanetsEmpty() {
+    return _planets.where((element) => element.favorite).length == 0;
+  }
+
   void addPlanet(PlanetModel planet) {
     _planets.add(planet);
     notifyListeners();
