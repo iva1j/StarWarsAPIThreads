@@ -23,7 +23,7 @@ class BottomNavbarIconURLs {
   String yoda = 'assets/images/yoda.png';
   String planet = 'assets/images/planet.png';
   String starship = 'assets/images/star-wars.png';
-  //String background = 'assets/images/bg.jpg';
+  String background = 'assets/images/bg.jpg';
 }
 
 class FutureBuilderStrings {

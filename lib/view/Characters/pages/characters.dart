@@ -21,18 +21,26 @@ class _CharactersState extends State<Characters> {
   }
 
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: bgColor,
-      appBar: AppBar(
-        title: Text("Characters"),
-        backgroundColor: barColor,
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(BottomNavbarIconURLs().background),
+          fit: BoxFit.cover,
+        ),
       ),
-      body: Container(
-        child: Center(
-          child: Consumer<CharactersModel>(
-            builder: (context, characters, child) => ListOfCharacters(
-              characters: characters.allCharacters,
-              generatingFavorites: false,
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: AppBar(
+          title: Text("Characters"),
+          backgroundColor: barColor,
+        ),
+        body: Container(
+          child: Center(
+            child: Consumer<CharactersModel>(
+              builder: (context, characters, child) => ListOfCharacters(
+                characters: characters.allCharacters,
+                generatingFavorites: false,
+              ),
             ),
           ),
         ),

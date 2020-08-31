@@ -35,6 +35,7 @@ class _SWBottomNavigationBarState extends State<SWBottomNavigationBar> {
         currentIndex: provider.currentIndex,
         items: [
           BottomNavigationBarItem(
+              backgroundColor: barColor,
               icon: Image.asset(
                 BottomNavbarIconURLs().yoda,
                 height: 25,
@@ -44,6 +45,7 @@ class _SWBottomNavigationBarState extends State<SWBottomNavigationBar> {
                 style: TextStyle(color: Colors.black),
               )),
           BottomNavigationBarItem(
+              backgroundColor: barColor,
               icon: Image.asset(
                 BottomNavbarIconURLs().planet,
                 height: 25,
@@ -53,6 +55,7 @@ class _SWBottomNavigationBarState extends State<SWBottomNavigationBar> {
                 style: TextStyle(color: Colors.black),
               )),
           BottomNavigationBarItem(
+            backgroundColor: barColor,
             icon: Image.asset(
               BottomNavbarIconURLs().starship,
               height: 25,
@@ -63,6 +66,7 @@ class _SWBottomNavigationBarState extends State<SWBottomNavigationBar> {
             ),
           ),
           BottomNavigationBarItem(
+            backgroundColor: barColor,
             icon: Icon(
               Icons.star,
               size: 25,
