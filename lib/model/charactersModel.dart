@@ -21,6 +21,10 @@ class CharactersModel extends ChangeNotifier {
     return _characters.length == 0;
   }
 
+  bool isFavoriteCharactersEmpty() {
+    return _characters.where((element) => element.favorite).length == 0;
+  }
+
   void clearCharacters() {
     _characters.clear();
     notifyListeners();

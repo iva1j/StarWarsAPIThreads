@@ -1,6 +1,7 @@
 import 'package:StarWarsAPIThreads/model/charactersModel.dart';
 import 'package:StarWarsAPIThreads/model/planetsModel.dart';
 import 'package:StarWarsAPIThreads/model/shipsModel.dart';
+import 'package:StarWarsAPIThreads/utils/colors.dart';
 import 'package:StarWarsAPIThreads/utils/strings.dart';
 import 'package:StarWarsAPIThreads/view/Characters/widgets/charactersDetails.dart';
 import 'package:StarWarsAPIThreads/view/Planets/widgets/planetDetails.dart';
@@ -23,7 +24,7 @@ class ListViewTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ExpansionTile(
       trailing: Icon(Icons.arrow_drop_down_circle),
-      backgroundColor: Colors.green[100],
+      backgroundColor: favTitlesColor,
       leading: IconButton(
           icon:
               res.favorite == true ? Icon(Icons.star) : Icon(Icons.star_border),

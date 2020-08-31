@@ -14,6 +14,10 @@ class ShipsModel extends ChangeNotifier {
     return _ships.length == 0;
   }
 
+  bool isFavoriteShipsEmpty() {
+    return _ships.where((element) => element.favorite).length == 0;
+  }
+
   void addShip(ShipModel ship) {
     _ships.add(ship);
     notifyListeners();
